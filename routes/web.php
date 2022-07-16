@@ -1,8 +1,10 @@
 <?php
 
 use App\Http\Controllers\HomeController;
+use App\Models\category;
 use Illuminate\Support\Facades\Route;
 use App\Models\products;
+
 
 /*
 |--------------------------------------------------------------------------
@@ -21,3 +23,5 @@ Route::get('/admin', [HomeController::class, 'admin'])->name('home.admin');
 Route::get('/', [HomeController::class, 'main'])->name('home.index');
 
 Route::resource('products', products::class);
+
+Route::resource('category', category::class);
