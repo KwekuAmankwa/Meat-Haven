@@ -2,7 +2,7 @@
 
 use App\Http\Controllers\HomeController;
 use Illuminate\Support\Facades\Route;
-
+use App\Models\products;
 
 /*
 |--------------------------------------------------------------------------
@@ -15,9 +15,6 @@ use Illuminate\Support\Facades\Route;
 |
 */
 
-Route::get('/', function () {
-    return view('home.admin',[]);
-})->name('home.admin');
 
 Route::get('/admin', [HomeController::class, 'admin'])->name('home.admin');
 
