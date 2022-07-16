@@ -10,10 +10,10 @@
     </option>
 </div> --}}
 
-<div class="form-group mb-3">
+{{-- <div class="form-group mb-3">
     <label for="price">Price</label>
     <input type="number" id="price" name="price" class="form-control" placeholder="">
-</div>
+</div> --}}
 
 {{-- <div class="form-group mb-3">
     <label for="keys">Keys</label>

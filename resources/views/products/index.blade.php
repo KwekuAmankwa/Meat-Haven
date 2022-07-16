@@ -4,8 +4,7 @@
 
 @section('content')
 
-    {{-- @each('products.partials.products', $products, 'product') --}}
+    @each('products.partials.product', $products, 'product')
 
-    <h1>PRODUCT</h1>
 
 @endsection
