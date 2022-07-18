@@ -19,7 +19,7 @@
     </div>
     <div class="container">
         @if (session('status'))
-            <div>
+            <div style="background: red; color:white">
                 {{ session('status') }}
             </div>
         @endif

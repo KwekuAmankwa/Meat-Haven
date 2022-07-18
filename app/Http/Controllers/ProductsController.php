@@ -2,6 +2,7 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreProduct;
 use App\Models\products;
 use Illuminate\Http\Request;
 
@@ -33,9 +34,16 @@ class ProductsController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreProduct $request)
     {
-        dd($request);
+        // dd($request);
+        $validated = $request->validated();
+
+        $product = products::create($validated);
+
+        $request->session()->flash('status','Product has been added!');
+
+        return redirect()->route('products.show', ['product'=> $product->id]);
     }
 
     /**
@@ -46,7 +54,7 @@ class ProductsController extends Controller
      */
     public function show($id)
     {
-        //
+        return view('products.show', ['product'=> products::findOrFail($id)]);
     }
 
     /**

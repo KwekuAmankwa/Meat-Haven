@@ -6,7 +6,7 @@
 
 @section('content')
 
-    <form action="" method="">
+    <form action="{{ route('products.store') }}" method="POST">
         @csrf
 
         @include('products.partials.form')
