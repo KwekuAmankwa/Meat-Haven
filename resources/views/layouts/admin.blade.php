@@ -13,7 +13,7 @@
         <nav class="my-2 my-md-0 mr-md-3">
             <a href="{{ route('products.index') }}" class="p-2 text-dark">Products</a>
             <a href="{{ route('products.create') }}" class="p-2 text-dark">Add Products</a>
-            <a href="#" class="p-2 text-dark">Categories</a>
+            <a href="{{ route('category.index') }}" class="p-2 text-dark">Categories</a>
         </nav>
     </div>
     <div class="container">
@@ -22,7 +22,9 @@
                 {{ session('status') }}
             </div>
         @endif
+
         @yield('content')
     </div>
+
 </body>
 </html>

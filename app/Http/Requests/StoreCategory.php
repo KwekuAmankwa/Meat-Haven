@@ -13,7 +13,7 @@ class StoreCategory extends FormRequest
      */
     public function authorize()
     {
-        return false;
+        return true;
     }
 
     /**
@@ -24,7 +24,7 @@ class StoreCategory extends FormRequest
     public function rules()
     {
         return [
-            'name'=> 'bail|required|min:5|max:100',
+            'name'=> 'bail|required|min:5|max:20',
         ];
     }
 }

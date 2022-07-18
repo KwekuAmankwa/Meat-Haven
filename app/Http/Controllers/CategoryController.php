@@ -2,9 +2,8 @@
 
 namespace App\Http\Controllers;
 
+use App\Http\Requests\StoreCategory;
 use App\Models\category;
-
-
 use Illuminate\Http\Request;
 
 class CategoryController extends Controller
@@ -26,7 +25,7 @@ class CategoryController extends Controller
      */
     public function create()
     {
-        return view('category.create');
+        return view('category.index');
     }
 
     /**
@@ -35,9 +34,15 @@ class CategoryController extends Controller
      * @param  \Illuminate\Http\Request  $request
      * @return \Illuminate\Http\Response
      */
-    public function store(Request $request)
+    public function store(StoreCategory $request)
     {
-        //
+        $validated = $request->validated();
+
+        $category = category::create($validated);
+
+        $request->session()->flash('status', 'New Category added!');
+
+        return redirect()->route('category.index');
     }
 
     /**
